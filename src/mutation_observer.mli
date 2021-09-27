@@ -34,22 +34,21 @@ end
 
 type obs
 
-val new_mutation_observer :
-  callback:(MutationRecord.t array -> obs -> unit) -> obs
+val new_ : callback:(MutationRecord.t array -> obs -> unit) -> obs
   [@@js.new "MutationObserver"]
 
 type options
 
 val options :
-  ?child_list:bool ->
+  ?childList:bool ->
   ?attributes:bool ->
-  ?character_data:bool ->
+  ?characterData:bool ->
   ?subtree:bool ->
-  ?attribute_old_value:bool ->
-  ?character_data_old_value:bool ->
-  ?attribute_filter:bool ->
+  ?attributeOldValue:bool ->
+  ?characterDataOldValue:bool ->
+  ?attributeFilter:bool ->
   unit ->
   options
   [@@js.builder] [@@js.verbatim_names]
 
-val observe : obs -> html_elt -> options -> unit [@@js.call]
+val observe : obs -> html_elt -> opts:options -> unit [@@js.call]
