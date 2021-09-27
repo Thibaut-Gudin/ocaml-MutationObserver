@@ -27,4 +27,8 @@ cordova add mutation-observer
 
 ## How to use it ?
 
+See the [MutationObserver
+api](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver)
+for more details.
+
 [TODO]
