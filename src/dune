@@ -1,0 +1,12 @@
+(rule
+ (targets mutation_observer.ml)
+ (deps mutation_observer.mli)
+ (action (run %{bin:gen_js_api} %{deps})))
+
+(library
+ (public_name mutation-observer)
+ (name mutation_observer)
+ (modes byte)
+ (libraries gen_js_api js_of_ocaml js_of_ocaml-ppx)
+ (preprocess (pps js_of_ocaml-ppx))
+)
